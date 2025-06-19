@@ -52,9 +52,15 @@ class Stack:
 
 try:
     new_stack = Stack(5)
-
-
+    
+    new_stack.push(10)
+    new_stack.push(20)
+    new_stack.push(30)
+    new_stack.push(40)
+    new_stack.push(50)
+    new_stack.push(60)
+    
+    new_stack.display()
 except StackException as e:
     print(e)    
 
-new_stack.display()
