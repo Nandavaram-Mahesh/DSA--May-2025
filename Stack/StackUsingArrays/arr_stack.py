@@ -7,86 +7,86 @@ print(f'Current_dir_name:{os.path.dirname(__file__)}')
 print(f'project_root:{project_root}')
 sys.path.append(project_root)
 
-from LinkedList.singlyLinkedList.stack_exception import StackUnderFlow , StackOverFlow, StackException
+from LinkedList.singlyLinkedList.container_exception import containerUnderFlow , containerOverFlow, containerException
 
 
-# # we are going to implement stack using lists
-# # Should i throw and error is the stack is full and empty ---> stakOverflow and StackUnderflow Errors
+# # we are going to implement container using lists
+# # Should i throw and error is the container is full and empty ---> stakOverflow and containerUnderflow Errors
 
 class Stack:
     
     def __init__(self,maxSize):
-        self.stack =[]
+        self.container =[]
         self.maxSize = maxSize
     
     # isEmpty
     def isEmpty(self):
-        return len(self.stack)==0
+        return len(self.container)==0
     # isFull
     def isFull(self):
-        # check if len(stack)>=maxSize 
-        return len(self.stack)>=self.maxSize
+        # check if len(container)>=maxSize 
+        return len(self.container)>=self.maxSize
             
     # push
     def push(self,data):
-        # check if stack is full
+        # check if container is full
         if self.isFull():
-            raise StackOverFlow('Stack is Full')
-        self.stack.append(data)
+            raise containerOverFlow('container is Full')
+        self.container.append(data)
         return
     # pop
     def pop(self):
-        # check if stack is empty
+        # check if container is empty
         if self.isEmpty():
-            raise StackUnderFlow('Stack is empty')
-        popped_data = self.stack.pop()
+            raise containerUnderFlow('container is empty')
+        popped_data = self.container.pop()
         return popped_data
     # peek
     def peek(self):
-        # check the top element of the stack
+        # check the top element of the container
         if self.isEmpty():
-             raise StackUnderFlow('Stack is empty')
-        return self.stack[-1]
+             raise containerUnderFlow('container is empty')
+        return self.container[-1]
     
-    def empty_stack(self):
-        self.stack.clear()
+    def empty_container(self):
+        self.container.clear()
         return
     
     # display
     def display(self):
-        for data in self.stack:
+        for data in self.container:
             print(data)
         return
 
 
 
-stack = Stack(maxSize=5)
+container = Stack(maxSize=5)
 
-stack.empty_stack()
+container.empty_container()
 
-stack.push(1)
-stack.push(2)
-stack.push(3)
-stack.push(4)
-stack.push(5)
-# stack.push(6)
-
-
-
-# stack.display()
-
-# stack.pop()
-# stack.pop()
-# stack.pop()
-# stack.pop()
-# stack.pop()
+container.push(1)
+container.push(2)
+container.push(3)
+container.push(4)
+container.push(5)
+# container.push(6)
 
 
-stack_top_element = stack.peek()
 
-print(f'stack_top_element:{stack_top_element}')
+# container.display()
 
-stack.display()
+# container.pop()
+# container.pop()
+# container.pop()
+# container.pop()
+# container.pop()
+
+
+container_top_element = container.peek()
+
+print(f'container_top_element:{container_top_element}')
+
+container.display()
 
  
     
